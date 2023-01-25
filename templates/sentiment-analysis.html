@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/output.css" />
+        <title>SA</title>
+    </head>
+    <body>
+        <div>
+            <h1 class="text-3xl text-center my-28">Sentiment Analysis for Amharic Language</h1>
+            <form method="post" action="" class="flex flex-col w-2/5 mx-auto my-0">
+                {{ form.text.label }}
+                {{ form.text(class="border border-black px-2 py-1 rounded text-xl") }}
+                {{ form.submit(class="bg-cyan-500 text-white rounded mt-5 py-2 font-bold text-lg border border-cyan-500 cursor-pointer hover:bg-white hover:text-cyan-500") }}
+            </form>
+            <div class="my-10">
+                {% if histories %}
+                    {% for k, v in histories.items() %}
+                        <div class="border border-black px-2 py-1 rounded w-2/5 my-2 mx-auto">
+                            <span>{{ k }}</span> - 
+                            <span>{{ v }}</span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
